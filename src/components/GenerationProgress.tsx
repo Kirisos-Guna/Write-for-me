@@ -73,7 +73,7 @@ const STAGES: ProgressStep[] = [
   {
     id: "plagiarism",
     label: "Running plagiarism check",
-    detail: "Verifying 0% originality score against detection database…",
+    detail: "Verifying 0% plagiarism score against detection database…",
     durationMs: 1100,
   },
   {

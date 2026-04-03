@@ -1,26 +1,42 @@
 import { GeneratedPaper } from "./types";
 
 /**
+ * Escape special LaTeX characters in user-supplied strings to prevent
+ * LaTeX injection and compilation errors (CodeQL js/incomplete-sanitization).
+ * Backslashes must be escaped first before any other substitution.
+ */
+function escapeLaTeX(input: string): string {
+  return input
+    .replace(/\\/g, "\\textbackslash{}")
+    .replace(/&/g, "\\&")
+    .replace(/%/g, "\\%")
+    .replace(/_/g, "\\_")
+    .replace(/\$/g, "\\$")
+    .replace(/#/g, "\\#")
+    .replace(/\^/g, "\\^{}")
+    .replace(/~/g, "\\textasciitilde{}")
+    .replace(/</g, "\\textless{}")
+    .replace(/>/g, "\\textgreater{}")
+    .replace(/\{/g, "\\{")
+    .replace(/\}/g, "\\}");
+}
+
+/**
  * Generate a LaTeX string from a GeneratedPaper object.
  */
 export function generateLatex(paper: GeneratedPaper): string {
   const refsLatex = paper.references
     .map(
       (r) =>
-        "\\bibitem{ref" + r.id + "} " + r.authors + ", ``" + r.title + ",'' \\textit{" + r.venue + "}, " + r.year + (r.doi ? ", doi: " + r.doi : "") + "."
+        "\\bibitem{ref" + r.id + "} " + escapeLaTeX(r.authors) + ", ``" + escapeLaTeX(r.title) + ",'' \\textit{" + escapeLaTeX(r.venue) + "}, " + r.year + (r.doi ? ", doi: " + escapeLaTeX(r.doi) : "") + "."
     )
     .join("\n");
 
   const sectionsLatex = paper.sections
     .filter((s) => s.id !== "abstract")
     .map((s) => {
-      const content = s.content
-        .replace(/&/g, "\\&")
-        .replace(/%/g, "\\%")
-        .replace(/_/g, "\\_")
-        .replace(/\$/g, "\\$")
-        .replace(/#/g, "\\#");
-      return `\\section{${s.title.replace(/^[IVX]+\.\s*/, "")}}\n${content}`;
+      const content = escapeLaTeX(s.content);
+      return `\\section{${escapeLaTeX(s.title.replace(/^[IVX]+\.\s*/, ""))}}\n${content}`;
     })
     .join("\n\n");
 
@@ -39,9 +55,9 @@ export function generateLatex(paper: GeneratedPaper): string {
 
 \\begin{document}
 
-\\title{${paper.title.replace(/&/g, "\\&").replace(/_/g, "\\_")}}
+\\title{${escapeLaTeX(paper.title)}}
 
-\\author{\\IEEEauthorblockN{${paper.authors}}
+\\author{\\IEEEauthorblockN{${escapeLaTeX(paper.authors)}}
 \\IEEEauthorblockA{\\textit{Department of Research} \\\\
 \\textit{University / Institution}\\\\
 contact@institution.edu}}
@@ -49,7 +65,7 @@ contact@institution.edu}}
 \\maketitle
 
 \\begin{abstract}
-${paper.abstract.replace(/&/g, "\\&").replace(/_/g, "\\_")}
+${escapeLaTeX(paper.abstract)}
 \\end{abstract}
 
 \\begin{IEEEkeywords}
