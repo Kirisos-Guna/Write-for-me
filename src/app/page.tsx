@@ -100,19 +100,19 @@ const testimonials = [
 const pricingPlans = [
   {
     name: "Basic",
-    price: "₹2,999",
+    price: "2,999",
     details: "Up to 6 pages",
     points: ["Manual writing", "IEEE formatting", "1 revision"],
   },
   {
     name: "Standard",
-    price: "₹4,999",
+    price: "4,999",
     details: "Up to 10 pages",
     points: ["Manual writing", "IEEE formatting", "2 revisions", "Priority delivery"],
   },
   {
     name: "Premium",
-    price: "₹7,999",
+    price: "7,999",
     details: "Up to 15 pages",
     points: ["Manual writing", "IEEE formatting", "3 revisions", "Fastest delivery"],
   },
@@ -275,7 +275,7 @@ export default function LandingPage() {
                 <h3 className="text-xl font-semibold text-slate-900">{plan.name}</h3>
                 <div className="mt-4 flex items-center gap-2 text-blue-700">
                   <IndianRupee className="w-5 h-5" />
-                  <span className="text-3xl font-extrabold">{plan.price.replace("₹", "")}</span>
+                  <span className="text-3xl font-extrabold">{plan.price}</span>
                 </div>
                 <p className="text-sm text-slate-500 mt-2">{plan.details}</p>
                 <ul className="mt-5 space-y-2">
