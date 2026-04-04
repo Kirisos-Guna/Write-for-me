@@ -25,7 +25,7 @@ const STAGES: ProgressStep[] = [
   {
     id: "outline",
     label: "Preparing writing outline",
-    detail: "Planning IEEE section flow for manual drafting…",
+    detail: "Planning IEEE section flow using AI drafting…",
     durationMs: 1000,
   },
   {
@@ -129,9 +129,9 @@ export default function GenerationProgress({
         {/* Header */}
         <div className="text-center mb-10">
           <div className="relative inline-flex mb-6">
-            <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center">
+            <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center">
               {overallProgress < 100 ? (
-                <Loader2 className="w-10 h-10 text-blue-600 animate-spin" />
+                <Loader2 className="w-10 h-10 text-green-600 animate-spin" />
               ) : (
                 <CheckCircle className="w-10 h-10 text-green-500" />
               )}
@@ -153,7 +153,7 @@ export default function GenerationProgress({
         <div className="mb-8">
           <div className="flex justify-between text-xs text-slate-500 mb-2">
             <span>Overall progress</span>
-            <span className="font-semibold text-blue-600">{overallProgress}%</span>
+            <span className="font-semibold text-green-600">{overallProgress}%</span>
           </div>
           <div className="progress-bar">
             <div
@@ -175,7 +175,7 @@ export default function GenerationProgress({
               <div
                 key={stage.id}
                 className={`flex items-center gap-4 px-5 py-3.5 border-b last:border-0 border-slate-50 transition-colors ${
-                  isActive ? "bg-blue-50" : isDone ? "bg-white" : "bg-white"
+                  isActive ? "bg-green-50" : isDone ? "bg-white" : "bg-white"
                 }`}
               >
                 {/* Status icon */}
@@ -183,7 +183,7 @@ export default function GenerationProgress({
                   {isDone ? (
                     <CheckCircle className="w-5 h-5 text-green-500" />
                   ) : isActive ? (
-                    <Loader2 className="w-5 h-5 text-blue-600 animate-spin" />
+                    <Loader2 className="w-5 h-5 text-green-600 animate-spin" />
                   ) : (
                     <div className="w-4 h-4 rounded-full border-2 border-slate-200" />
                   )}
@@ -196,7 +196,7 @@ export default function GenerationProgress({
                       isDone
                         ? "text-slate-500 line-through decoration-1"
                         : isActive
-                        ? "text-blue-700"
+                        ? "text-green-700"
                         : isPending
                         ? "text-slate-400"
                         : "text-slate-600"
@@ -205,7 +205,7 @@ export default function GenerationProgress({
                     {stage.label}
                   </p>
                   {isActive && (
-                    <p className="text-xs text-blue-500 mt-0.5 truncate">
+                    <p className="text-xs text-green-500 mt-0.5 truncate">
                       {stage.detail}
                     </p>
                   )}
