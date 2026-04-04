@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Write for Me – IEEE Research Paper Writing Service",
   description:
-    "Share your requirements and get a manually written IEEE-formatted research paper uploaded to you in your preferred format.",
+    "Share your requirements and get an AI-written IEEE-formatted research paper uploaded to you in your preferred format.",
 };
 
 export default function RootLayout({

@@ -270,7 +270,7 @@ export default function PaperPreview({ paper, onRegenerate }: PaperPreviewProps)
                             return next;
                           });
                         }}
-                        className="p-1.5 rounded-lg text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition"
+                        className="p-1.5 rounded-lg text-slate-400 hover:text-green-600 hover:bg-green-50 transition"
                         title="Edit section"
                       >
                         <Edit3 className="w-4 h-4" />
@@ -292,13 +292,13 @@ export default function PaperPreview({ paper, onRegenerate }: PaperPreviewProps)
                         <textarea
                           value={editingContent}
                           onChange={(e) => setEditingContent(e.target.value)}
-                          className="w-full min-h-[300px] px-4 py-3 rounded-xl border border-blue-200 bg-blue-50 text-slate-900 text-sm leading-relaxed focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y font-mono"
+                          className="w-full min-h-[300px] px-4 py-3 rounded-xl border border-green-200 bg-green-50 text-slate-900 text-sm leading-relaxed focus:outline-none focus:ring-2 focus:ring-green-500 resize-y font-mono"
                           autoFocus
                         />
                         <div className="flex gap-3 mt-3">
                           <button
                             onClick={saveEdit}
-                            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition"
+                            className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-lg transition"
                           >
                             <Save className="w-4 h-4" />
                             Save Changes
@@ -343,7 +343,7 @@ export default function PaperPreview({ paper, onRegenerate }: PaperPreviewProps)
                   {ref.authors}, &quot;{ref.title},&quot;{" "}
                   <em>{ref.venue}</em>, {ref.year}
                   {ref.doi && (
-                    <span className="text-blue-500 ml-1">
+                    <span className="text-green-500 ml-1">
                       doi: {ref.doi}
                     </span>
                   )}
@@ -359,7 +359,7 @@ export default function PaperPreview({ paper, onRegenerate }: PaperPreviewProps)
           {/* Download card */}
           <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5">
             <h3 className="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
-              <Download className="w-4 h-4 text-blue-600" />
+              <Download className="w-4 h-4 text-green-600" />
               Download Paper
             </h3>
             <div className="space-y-3">
@@ -389,7 +389,7 @@ export default function PaperPreview({ paper, onRegenerate }: PaperPreviewProps)
                   key={format}
                   onClick={() => downloadFile(format)}
                   disabled={downloading !== null}
-                  className="w-full flex items-center gap-3 px-4 py-3 rounded-xl border border-slate-200 hover:border-blue-200 hover:bg-blue-50 text-left transition disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full flex items-center gap-3 px-4 py-3 rounded-xl border border-slate-200 hover:border-green-200 hover:bg-green-50 text-left transition disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <span className="text-xl">{icon}</span>
                   <div className="flex-1 min-w-0">
@@ -399,7 +399,7 @@ export default function PaperPreview({ paper, onRegenerate }: PaperPreviewProps)
                     <div className="text-xs text-slate-400">{desc}</div>
                   </div>
                   {downloading === format ? (
-                    <div className="w-4 h-4 border-2 border-blue-400 border-t-transparent rounded-full animate-spin flex-shrink-0" />
+                    <div className="w-4 h-4 border-2 border-green-400 border-t-transparent rounded-full animate-spin flex-shrink-0" />
                   ) : (
                     <Download className="w-4 h-4 text-slate-300 flex-shrink-0" />
                   )}
@@ -411,7 +411,7 @@ export default function PaperPreview({ paper, onRegenerate }: PaperPreviewProps)
           {/* Paper info card */}
           <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5">
             <h3 className="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
-              <FileText className="w-4 h-4 text-blue-600" />
+              <FileText className="w-4 h-4 text-green-600" />
               Paper Details
             </h3>
             <dl className="space-y-3">
@@ -532,7 +532,7 @@ export default function PaperPreview({ paper, onRegenerate }: PaperPreviewProps)
 
             <button
               onClick={() => setShowPlagiarismReport(false)}
-              className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold transition"
+              className="w-full py-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-semibold transition"
             >
               Close Report
             </button>

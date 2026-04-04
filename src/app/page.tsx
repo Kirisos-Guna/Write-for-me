@@ -13,21 +13,21 @@ import {
 const features = [
   {
     icon: FileText,
-    title: "Manually Written IEEE Papers",
+    title: "AI-Written IEEE Papers",
     description:
-      "Every paper is personally written by me using your exact requirements and delivered in proper IEEE conference/journal structure.",
+      "Every paper is generated with AI using your exact requirements and delivered in proper IEEE conference/journal structure.",
   },
   {
     icon: CheckCircle,
     title: "Direct Requirement Handling",
     description:
-      "You share your topic, field, and expectations directly with me. No automated writing pipeline is used for your final paper.",
+      "You share your topic, field, and expectations directly with me. I use AI to turn your request into the final paper draft.",
   },
   {
     icon: Zap,
     title: "Timely Delivery",
     description:
-      "I draft and structure your paper quickly while still writing each section manually for quality and clarity.",
+      "I use AI to draft and structure your paper quickly while maintaining quality and clarity.",
   },
   {
     icon: Download,
@@ -58,9 +58,9 @@ const steps = [
   },
   {
     number: "02",
-    title: "I Write It Manually",
+    title: "I Write It with AI",
     description:
-      "I personally write your IEEE paper based on your request. The final document is not AI-written.",
+      "I use AI to write your IEEE paper based on your request, then upload it to you.",
   },
   {
     number: "03",
@@ -80,7 +80,7 @@ const testimonials = [
   {
     name: "Dr. Aisha M.",
     role: "Assistant Professor, EE Department",
-    text: "The manual writing quality was excellent. My IEEE formatting requirements were followed exactly.",
+    text: "The AI-written draft quality was excellent. My IEEE formatting requirements were followed exactly.",
     rating: 5,
   },
   {
@@ -102,19 +102,19 @@ const pricingPlans = [
     name: "Basic",
     price: 2999,
     details: "Up to 6 pages",
-    points: ["Manual writing", "IEEE formatting", "1 revision"],
+    points: ["AI-written draft", "IEEE formatting", "1 revision"],
   },
   {
     name: "Standard",
     price: 4999,
     details: "Up to 10 pages",
-    points: ["Manual writing", "IEEE formatting", "2 revisions", "Priority delivery"],
+    points: ["AI-written draft", "IEEE formatting", "2 revisions", "Priority delivery"],
   },
   {
     name: "Premium",
     price: 7999,
     details: "Up to 15 pages",
-    points: ["Manual writing", "IEEE formatting", "3 revisions", "Fastest delivery"],
+    points: ["AI-written draft", "IEEE formatting", "3 revisions", "Fastest delivery"],
   },
 ];
 
@@ -128,7 +128,7 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 gap-3">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-green-600 flex items-center justify-center">
                 <FileText className="w-4 h-4 text-white" />
               </div>
               <span className="text-lg sm:text-xl font-bold text-slate-900">
@@ -136,38 +136,38 @@ export default function LandingPage() {
               </span>
             </div>
             <div className="hidden sm:flex items-center gap-8">
-              <a href="#features" className="text-sm text-slate-600 hover:text-blue-600 transition-colors">
+              <a href="#features" className="text-sm text-slate-600 hover:text-green-600 transition-colors">
                 Features
               </a>
-              <a href="#pricing" className="text-sm text-slate-600 hover:text-blue-600 transition-colors">
+              <a href="#pricing" className="text-sm text-slate-600 hover:text-green-600 transition-colors">
                 Pricing
               </a>
-              <a href="#how-it-works" className="text-sm text-slate-600 hover:text-blue-600 transition-colors">
+              <a href="#how-it-works" className="text-sm text-slate-600 hover:text-green-600 transition-colors">
                 How It Works
               </a>
-              <a href="#testimonials" className="text-sm text-slate-600 hover:text-blue-600 transition-colors">
+              <a href="#testimonials" className="text-sm text-slate-600 hover:text-green-600 transition-colors">
                 Testimonials
               </a>
             </div>
             <Link
               href="/generate"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-semibold px-3 sm:px-5 py-2.5 rounded-lg transition-colors"
+              className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-xs sm:text-sm font-semibold px-3 sm:px-5 py-2.5 rounded-lg transition-colors"
             >
               Submit Request <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
           <div className="sm:hidden border-t border-slate-100">
             <div className="grid grid-cols-4 gap-3 py-3 text-xs text-slate-600">
-              <a href="#features" className="hover:text-blue-600 transition-colors whitespace-nowrap">
+              <a href="#features" className="hover:text-green-600 transition-colors whitespace-nowrap">
                 Features
               </a>
-              <a href="#pricing" className="hover:text-blue-600 transition-colors whitespace-nowrap">
+              <a href="#pricing" className="hover:text-green-600 transition-colors whitespace-nowrap">
                 Pricing
               </a>
-              <a href="#how-it-works" className="hover:text-blue-600 transition-colors whitespace-nowrap">
+              <a href="#how-it-works" className="hover:text-green-600 transition-colors whitespace-nowrap">
                 How It Works
               </a>
-              <a href="#testimonials" className="hover:text-blue-600 transition-colors whitespace-nowrap">
+              <a href="#testimonials" className="hover:text-green-600 transition-colors whitespace-nowrap">
                 Testimonials
               </a>
             </div>
@@ -176,31 +176,29 @@ export default function LandingPage() {
       </nav>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-16 sm:py-24 px-4">
+      <section className="relative overflow-hidden bg-gradient-to-br from-green-50 via-white to-emerald-50 py-16 sm:py-24 px-4">
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-indigo-200 rounded-full blur-3xl" />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-green-200 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-emerald-200 rounded-full blur-3xl" />
         </div>
         <div className="relative max-w-5xl mx-auto text-center animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 text-xs sm:text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 text-xs sm:text-sm font-medium px-4 py-1.5 rounded-full mb-6">
             <CheckCircle className="w-3.5 h-3.5" />
-            100% Manually Written by Me
+            AI-Written to Your Requirements
           </div>
           <h1 className="text-4xl sm:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
             Your IEEE Research Paper,{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-              Written Manually
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">
+              Written with AI
             </span>
           </h1>
           <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto mb-10">
-            You share your requirements, and I personally write and upload your
-            IEEE-formatted paper. This is a manual writing service—not AI paper
-            generation.
+            You submit your request, and I use AI to write your IEEE-formatted paper and upload it to you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/generate"
-              className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold px-8 py-4 rounded-xl transition-all shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white text-lg font-semibold px-8 py-4 rounded-xl transition-all shadow-lg hover:shadow-xl"
             >
               Submit My Request <ChevronRight className="w-5 h-5" />
             </Link>
@@ -212,7 +210,7 @@ export default function LandingPage() {
             </a>
           </div>
           <div className="mt-12 flex flex-wrap justify-center gap-5 sm:gap-8 text-sm text-slate-500">
-            {["Manual writing process", "All IEEE sections included", "Pricing in rupees", "Revisions available"].map((item) => (
+            {["AI writing process", "All IEEE sections included", "Pricing in rupees", "Revisions available"].map((item) => (
               <div key={item} className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-green-500" />
                 <span>{item}</span>
@@ -230,7 +228,7 @@ export default function LandingPage() {
               Everything You Need for Submission
             </h2>
             <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-              From request to final upload, every paper is written manually and
+              From request to final upload, every paper is written with AI and
               structured for IEEE-style submissions.
             </p>
           </div>
@@ -238,11 +236,11 @@ export default function LandingPage() {
             {features.map((feature, idx) => (
               <div
                 key={feature.title}
-                className="p-6 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-lg hover:border-blue-100 transition-all group animate-fade-in-up"
+                className="p-6 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-lg hover:border-green-100 transition-all group animate-fade-in-up"
                 style={{ animationDelay: `${idx * CARD_ANIMATION_DELAY_STEP}s` }}
               >
-                <div className="w-12 h-12 rounded-xl bg-blue-100 group-hover:bg-blue-600 flex items-center justify-center mb-4 transition-colors">
-                  <feature.icon className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors" />
+                <div className="w-12 h-12 rounded-xl bg-green-100 group-hover:bg-green-600 flex items-center justify-center mb-4 transition-colors">
+                  <feature.icon className="w-6 h-6 text-green-600 group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="text-lg font-semibold text-slate-900 mb-2">
                   {feature.title}
@@ -275,7 +273,7 @@ export default function LandingPage() {
                 style={{ animationDelay: `${idx * CARD_ANIMATION_DELAY_STEP}s` }}
               >
                 <h3 className="text-xl font-semibold text-slate-900">{plan.name}</h3>
-                <div className="mt-4 flex items-center gap-2 text-blue-700">
+                <div className="mt-4 flex items-center gap-2 text-green-700">
                   <IndianRupee className="w-5 h-5" />
                   <span
                     className="text-3xl font-extrabold"
@@ -300,14 +298,14 @@ export default function LandingPage() {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-16 sm:py-24 px-4 bg-gradient-to-br from-slate-900 to-blue-950">
+      <section id="how-it-works" className="py-16 sm:py-24 px-4 bg-gradient-to-br from-slate-900 to-green-950">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               How It Works
             </h2>
             <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-              Four simple steps from your request to final manual delivery.
+              Four simple steps from your request to final AI-assisted delivery.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -317,7 +315,7 @@ export default function LandingPage() {
                 className="flex gap-4 sm:gap-6 p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors animate-fade-in-up"
                 style={{ animationDelay: `${idx * CARD_ANIMATION_DELAY_STEP}s` }}
               >
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-green-600 flex items-center justify-center text-white font-bold text-sm">
                   {step.number}
                 </div>
                 <div>
@@ -376,18 +374,18 @@ export default function LandingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 sm:py-24 px-4 bg-gradient-to-r from-blue-600 to-indigo-700">
+      <section className="py-16 sm:py-24 px-4 bg-gradient-to-r from-green-600 to-emerald-700">
         <div className="max-w-3xl mx-auto text-center animate-fade-in-up">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
             Ready to Submit Your Request?
           </h2>
-          <p className="text-blue-100 text-lg mb-10">
-            Share your requirement details in a few minutes and I&apos;ll write
-            your paper manually and upload it to you.
+          <p className="text-green-100 text-lg mb-10">
+            Share your requirement details in a few minutes and I&apos;ll use AI
+            to write your paper and upload it to you.
           </p>
           <Link
             href="/generate"
-            className="inline-flex items-center gap-2 bg-white hover:bg-blue-50 text-blue-700 font-bold text-lg px-10 py-4 rounded-xl transition-all shadow-lg"
+            className="inline-flex items-center gap-2 bg-white hover:bg-green-50 text-green-700 font-bold text-lg px-10 py-4 rounded-xl transition-all shadow-lg"
           >
             Start Now <ChevronRight className="w-5 h-5" />
           </Link>
@@ -399,13 +397,13 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-green-600 flex items-center justify-center">
                 <FileText className="w-4 h-4 text-white" />
               </div>
               <span className="text-white font-semibold">Write for Me</span>
             </div>
             <p className="text-sm text-slate-500">
-              © {new Date().getFullYear()} Write for Me. Manual IEEE research paper writing service.
+              © {new Date().getFullYear()} Write for Me. AI IEEE research paper writing service.
             </p>
             <div className="flex gap-6 text-sm">
               <a href="#features" className="hover:text-white transition-colors">Features</a>

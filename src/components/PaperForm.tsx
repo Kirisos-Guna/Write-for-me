@@ -69,7 +69,7 @@ export default function PaperForm({
   };
 
   const inputClass =
-    "w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-sm";
+    "w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition text-sm";
   const labelClass = "block text-sm font-semibold text-slate-700 mb-2";
   const hintClass = "text-xs text-slate-400 mt-1.5";
 
@@ -89,7 +89,7 @@ export default function PaperForm({
               title={step.title}
               className={`w-8 h-8 rounded-full text-xs font-semibold flex items-center justify-center transition-all ${
                 step.id === currentStep
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-200 scale-110"
+                  ? "bg-green-600 text-white shadow-lg shadow-green-200 scale-110"
                   : step.id < currentStep
                   ? "bg-green-500 text-white"
                   : "bg-slate-200 text-slate-400"
@@ -106,7 +106,7 @@ export default function PaperForm({
         {/* Progress line */}
         <div className="h-1.5 bg-slate-200 rounded-full overflow-hidden">
           <div
-            className="h-full bg-gradient-to-r from-blue-600 to-indigo-500 rounded-full transition-all duration-500"
+            className="h-full bg-gradient-to-r from-green-600 to-emerald-500 rounded-full transition-all duration-500"
             style={{ width: `${((currentStep - 1) / (totalSteps - 1)) * 100}%` }}
           />
         </div>
@@ -226,9 +226,9 @@ export default function PaperForm({
                 step="1"
                 value={data.pageCount}
                 onChange={(e) => update("pageCount", parseInt(e.target.value))}
-                className="flex-1 accent-blue-600"
+                className="flex-1 accent-green-600"
               />
-              <div className="w-20 text-center bg-blue-50 text-blue-700 font-bold text-lg rounded-xl py-2">
+              <div className="w-20 text-center bg-green-50 text-green-700 font-bold text-lg rounded-xl py-2">
                 {data.pageCount}
               </div>
             </div>
@@ -402,15 +402,14 @@ export default function PaperForm({
                 </div>
               ))}
             </div>
-            <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 flex gap-3">
-              <FileText className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+            <div className="bg-green-50 border border-green-100 rounded-xl p-4 flex gap-3">
+              <FileText className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
               <div>
-                <p className="text-sm font-semibold text-blue-800 mb-1">
+                <p className="text-sm font-semibold text-green-800 mb-1">
                   Ready to Submit
                 </p>
-                <p className="text-xs text-blue-600">
-                  Your request details are ready. I will use this information to
-                  manually write your IEEE paper and deliver it in your chosen format.
+                <p className="text-xs text-green-600">
+                  Your request details are ready. I will use AI to write your IEEE paper and upload it to you in your chosen format.
                 </p>
               </div>
             </div>
@@ -433,7 +432,7 @@ export default function PaperForm({
           <button
             onClick={handleNext}
             disabled={!canAdvance}
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-40 disabled:cursor-not-allowed transition shadow-sm"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-green-600 hover:bg-green-700 disabled:opacity-40 disabled:cursor-not-allowed transition shadow-sm"
           >
             Next
             <ChevronRight className="w-4 h-4" />
@@ -441,7 +440,7 @@ export default function PaperForm({
         ) : (
           <button
             onClick={handleSubmit}
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition shadow-lg shadow-blue-200"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 transition shadow-lg shadow-green-200"
           >
             Submit Request
             <ChevronRight className="w-4 h-4" />
