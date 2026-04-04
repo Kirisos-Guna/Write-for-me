@@ -157,7 +157,7 @@ export default function LandingPage() {
             </Link>
           </div>
           <div className="sm:hidden border-t border-slate-100">
-            <div className="flex items-center gap-5 py-3 overflow-x-auto text-sm text-slate-600">
+            <div className="grid grid-cols-4 gap-3 py-3 text-xs text-slate-600">
               <a href="#features" className="hover:text-blue-600 transition-colors whitespace-nowrap">
                 Features
               </a>
@@ -277,7 +277,12 @@ export default function LandingPage() {
                 <h3 className="text-xl font-semibold text-slate-900">{plan.name}</h3>
                 <div className="mt-4 flex items-center gap-2 text-blue-700">
                   <IndianRupee className="w-5 h-5" />
-                  <span className="text-3xl font-extrabold">{plan.price.toLocaleString("en-IN")}</span>
+                  <span
+                    className="text-3xl font-extrabold"
+                    aria-label={`${plan.price.toLocaleString("en-IN")} rupees`}
+                  >
+                    {plan.price.toLocaleString("en-IN")}
+                  </span>
                 </div>
                 <p className="text-sm text-slate-500 mt-2">{plan.details}</p>
                 <ul className="mt-5 space-y-2">
