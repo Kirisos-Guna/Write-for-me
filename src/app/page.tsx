@@ -279,7 +279,7 @@ export default function LandingPage() {
                   <IndianRupee className="w-5 h-5" />
                   <span
                     className="text-3xl font-extrabold"
-                    aria-label={`${plan.price.toLocaleString("en-IN")} rupees`}
+                    aria-label={`${plan.name} plan: ${plan.price.toLocaleString("en-IN")} rupees`}
                   >
                     {plan.price.toLocaleString("en-IN")}
                   </span>
