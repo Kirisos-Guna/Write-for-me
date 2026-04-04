@@ -118,6 +118,8 @@ const pricingPlans = [
   },
 ];
 
+const CARD_ANIMATION_DELAY_STEP = 0.08;
+
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -237,7 +239,7 @@ export default function LandingPage() {
               <div
                 key={feature.title}
                 className="p-6 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-lg hover:border-blue-100 transition-all group animate-fade-in-up"
-                style={{ animationDelay: `${idx * 0.08}s` }}
+                style={{ animationDelay: `${idx * CARD_ANIMATION_DELAY_STEP}s` }}
               >
                 <div className="w-12 h-12 rounded-xl bg-blue-100 group-hover:bg-blue-600 flex items-center justify-center mb-4 transition-colors">
                   <feature.icon className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors" />
@@ -270,7 +272,7 @@ export default function LandingPage() {
               <div
                 key={plan.name}
                 className="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm hover:shadow-lg transition-all animate-fade-in-up"
-                style={{ animationDelay: `${idx * 0.08}s` }}
+                style={{ animationDelay: `${idx * CARD_ANIMATION_DELAY_STEP}s` }}
               >
                 <h3 className="text-xl font-semibold text-slate-900">{plan.name}</h3>
                 <div className="mt-4 flex items-center gap-2 text-blue-700">
@@ -308,7 +310,7 @@ export default function LandingPage() {
               <div
                 key={step.number}
                 className="flex gap-4 sm:gap-6 p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors animate-fade-in-up"
-                style={{ animationDelay: `${idx * 0.08}s` }}
+                style={{ animationDelay: `${idx * CARD_ANIMATION_DELAY_STEP}s` }}
               >
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm">
                   {step.number}
@@ -343,7 +345,7 @@ export default function LandingPage() {
               <div
                 key={t.name}
                 className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 animate-fade-in-up"
-                style={{ animationDelay: `${idx * 0.08}s` }}
+                style={{ animationDelay: `${idx * CARD_ANIMATION_DELAY_STEP}s` }}
               >
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: t.rating }).map((_, i) => (
