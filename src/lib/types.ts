@@ -86,5 +86,5 @@ export const FORM_STEPS = [
   { id: 6, title: "Sources", description: "References to include" },
   { id: 7, title: "IEEE Specifics", description: "Formatting requirements" },
   { id: 8, title: "Instructions", description: "Additional constraints" },
-  { id: 9, title: "Review & Generate", description: "Confirm and generate" },
+  { id: 9, title: "Review & Submit", description: "Confirm and submit request" },
 ] as const;

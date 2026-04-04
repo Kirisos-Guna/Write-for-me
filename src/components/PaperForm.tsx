@@ -353,7 +353,7 @@ export default function PaperForm({
           </div>
         )}
 
-        {/* Step 9 – Review & Generate */}
+        {/* Step 9 – Review & Submit */}
         {currentStep === 9 && (
           <div>
             <div className="bg-slate-50 rounded-xl border border-slate-200 divide-y divide-slate-200 text-sm mb-6">
@@ -406,13 +406,11 @@ export default function PaperForm({
               <FileText className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="text-sm font-semibold text-blue-800 mb-1">
-                  Ready to Generate
+                  Ready to Submit
                 </p>
                 <p className="text-xs text-blue-600">
-                  Your complete IEEE paper will be generated with all sections:
-                  abstract, introduction, literature review, methodology,
-                  results, discussion, conclusion, and references. Estimated
-                  time: 15–30 seconds.
+                  Your request details are ready. I will use this information to
+                  manually write your IEEE paper and deliver it in your chosen format.
                 </p>
               </div>
             </div>
@@ -445,7 +443,7 @@ export default function PaperForm({
             onClick={handleSubmit}
             className="inline-flex items-center gap-2 px-8 py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition shadow-lg shadow-blue-200"
           >
-            Generate Paper
+            Submit Request
             <ChevronRight className="w-4 h-4" />
           </button>
         )}

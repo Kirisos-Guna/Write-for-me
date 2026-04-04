@@ -18,68 +18,68 @@ interface ProgressStep {
 const STAGES: ProgressStep[] = [
   {
     id: "init",
-    label: "Initializing generation engine",
-    detail: "Setting up the paper generation pipeline…",
+    label: "Reviewing your request details",
+    detail: "Checking your topic, format, and key instructions…",
     durationMs: 800,
   },
   {
     id: "outline",
-    label: "Building paper outline",
-    detail: "Constructing IEEE section structure and outline…",
+    label: "Preparing writing outline",
+    detail: "Planning IEEE section flow for manual drafting…",
     durationMs: 1000,
   },
   {
     id: "abstract",
-    label: "Writing abstract & keywords",
-    detail: "Synthesizing research summary and identifying key terms…",
+    label: "Drafting abstract & keywords",
+    detail: "Drafting a clear summary and key terms…",
     durationMs: 1200,
   },
   {
     id: "intro",
     label: "Writing introduction",
-    detail: "Drafting motivation, background, and contributions…",
+    detail: "Building motivation, context, and contributions…",
     durationMs: 1400,
   },
   {
     id: "litreview",
-    label: "Generating literature review",
-    detail: "Synthesizing related works and identifying research gaps…",
+    label: "Writing literature review",
+    detail: "Covering related works and research gaps…",
     durationMs: 1600,
   },
   {
     id: "methodology",
     label: "Writing methodology",
-    detail: "Describing experimental design and proposed approach…",
+    detail: "Describing approach, setup, and implementation…",
     durationMs: 1500,
   },
   {
     id: "results",
-    label: "Generating results",
-    detail: "Compiling tables, metrics, and comparative analysis…",
+    label: "Drafting results",
+    detail: "Structuring findings and comparative analysis…",
     durationMs: 1300,
   },
   {
     id: "discussion",
     label: "Writing discussion & conclusion",
-    detail: "Drawing insights, limitations, and future work…",
+    detail: "Finalizing insights, limitations, and future work…",
     durationMs: 1200,
   },
   {
     id: "refs",
     label: "Formatting IEEE references",
-    detail: "Generating citations in IEEE bibliographic format…",
+    detail: "Formatting references in IEEE style…",
     durationMs: 900,
   },
   {
-    id: "plagiarism",
-    label: "Running plagiarism check",
-    detail: "Verifying 0% plagiarism score against detection database…",
+    id: "qa",
+    label: "Quality review",
+    detail: "Cross-checking instructions and consistency…",
     durationMs: 1100,
   },
   {
     id: "finalize",
-    label: "Finalizing paper",
-    detail: "Assembling complete document and preparing for preview…",
+    label: "Preparing final draft",
+    detail: "Preparing your preview and delivery files…",
     durationMs: 800,
   },
 ];
@@ -92,7 +92,6 @@ export default function GenerationProgress({
   const [overallProgress, setOverallProgress] = useState(0);
 
   useEffect(() => {
-    let stageIdx = 0;
     let cumulativeDelay = 0;
     const totalDuration = STAGES.reduce((s, st) => s + st.durationMs, 0);
     let elapsed = 0;
@@ -111,7 +110,6 @@ export default function GenerationProgress({
 
       timers.push(t);
       cumulativeDelay += stage.durationMs;
-      stageIdx = idx;
     });
 
     // Complete the last stage
@@ -124,9 +122,6 @@ export default function GenerationProgress({
 
     return () => timers.forEach(clearTimeout);
   }, []);
-
-  const currentStage =
-    currentStageIndex < STAGES.length ? STAGES[currentStageIndex] : null;
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-56px)] px-4 py-12">
@@ -144,13 +139,13 @@ export default function GenerationProgress({
           </div>
           <h2 className="text-2xl font-bold text-slate-900 mb-2">
             {overallProgress < 100
-              ? "Generating Your Paper"
-              : "Paper Ready!"}
+              ? "Preparing Your Paper"
+              : "Draft Ready!"}
           </h2>
           <p className="text-slate-500 text-sm">
             {overallProgress < 100
-              ? `Writing "${requirements.title || "your research paper"}" in IEEE format…`
-              : "Your plagiarism-free IEEE paper has been generated successfully."}
+              ? `Working on "${requirements.title || "your research paper"}" in IEEE format…`
+              : "Your paper draft is ready for preview and delivery."}
           </p>
         </div>
 
@@ -228,7 +223,7 @@ export default function GenerationProgress({
         {overallProgress === 100 && (
           <p className="text-center text-sm text-green-600 font-medium mt-6 flex items-center justify-center gap-2">
             <CheckCircle className="w-4 h-4" />
-            Plagiarism check passed — 0% match detected
+            Draft preparation completed
           </p>
         )}
       </div>

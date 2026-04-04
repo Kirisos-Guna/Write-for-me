@@ -46,7 +46,7 @@ export default function GeneratePage() {
 
       if (!response.ok) {
         const data = await response.json();
-        throw new Error(data.error || "Paper generation failed.");
+        throw new Error(data.error || "Request processing failed.");
       }
 
       const data = await response.json();
@@ -88,10 +88,10 @@ export default function GeneratePage() {
             </span>
           )}
           {appState === "preview" && generatedPaper && (
-            <div className="flex items-center gap-2 text-sm text-green-600 font-medium">
-              <div className="w-2 h-2 bg-green-500 rounded-full" />
-              Paper ready — {generatedPaper.wordCount.toLocaleString()} words
-            </div>
+              <div className="flex items-center gap-2 text-sm text-green-600 font-medium">
+                <div className="w-2 h-2 bg-green-500 rounded-full" />
+                Draft ready — {generatedPaper.wordCount.toLocaleString()} words
+              </div>
           )}
         </div>
       </header>
