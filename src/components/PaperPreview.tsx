@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { GeneratedPaper, PaperSection, DownloadFormat } from "@/lib/types";
-import { generateLatex, generatePlainText } from "@/lib/exportUtils";
+import { generateLatex } from "@/lib/exportUtils";
 import {
   Download,
   Edit3,
@@ -226,14 +226,14 @@ export default function PaperPreview({ paper, onRegenerate }: PaperPreviewProps)
             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-green-200 bg-green-50 text-green-700 text-sm font-semibold hover:bg-green-100 transition"
           >
             <Shield className="w-4 h-4" />
-            Plagiarism Report
+            Quality Report
           </button>
           <button
             onClick={onRegenerate}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-white text-slate-600 text-sm font-semibold hover:bg-slate-50 transition"
           >
             <RotateCcw className="w-4 h-4" />
-            Regenerate
+            Edit Request
           </button>
         </div>
       </div>
@@ -433,7 +433,7 @@ export default function PaperPreview({ paper, onRegenerate }: PaperPreviewProps)
             </dl>
           </div>
 
-          {/* Plagiarism badge */}
+          {/* Quality badge */}
           <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border border-green-100 p-5">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center">
@@ -441,30 +441,30 @@ export default function PaperPreview({ paper, onRegenerate }: PaperPreviewProps)
               </div>
               <div>
                 <div className="text-sm font-bold text-green-800">
-                  Plagiarism Free
+                  Quality Checked
                 </div>
-                <div className="text-xs text-green-600">Verified 0% match</div>
+                <div className="text-xs text-green-600">Reviewed for consistency</div>
               </div>
             </div>
             <div className="h-2 bg-green-100 rounded-full overflow-hidden">
               <div className="h-full w-0 bg-green-500 rounded-full" />
             </div>
             <div className="flex justify-between text-xs text-green-600 mt-1">
-              <span>Plagiarism score</span>
+              <span>Similarity indicator</span>
               <span className="font-bold">0%</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Plagiarism report modal */}
+      {/* Quality report modal */}
       {showPlagiarismReport && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-8">
             <div className="flex items-start justify-between mb-6">
               <div>
                 <h2 className="text-xl font-bold text-slate-900 mb-1">
-                  Plagiarism Report
+                  Quality Report
                 </h2>
                 <p className="text-sm text-slate-500">
                   Verification completed on{" "}

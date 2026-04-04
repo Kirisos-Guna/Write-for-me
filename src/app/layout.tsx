@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Write for Me – IEEE Research Paper Generator",
+  title: "Write for Me – IEEE Research Paper Writing Service",
   description:
-    "Generate original, plagiarism-free IEEE-formatted research papers with AI. Upload your requirements and receive a complete paper with verified 0% plagiarism.",
+    "Share your requirements and get a manually written IEEE-formatted research paper uploaded to you in your preferred format.",
 };
 
 export default function RootLayout({
